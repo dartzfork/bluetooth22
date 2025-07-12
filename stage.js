@@ -1,4 +1,16 @@
 const io = require("socket.io-client");
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 const socket = io("https://www.windows93.net:8088", {
 	forceNew: true,
 	transportOptions: {
